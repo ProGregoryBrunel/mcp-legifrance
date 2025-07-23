@@ -1,0 +1,8 @@
+name: Feature Request
+description: Proposer une fonctionnalité
+labels: enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Décrivez votre proposition.

@@ -1,0 +1,3 @@
+[run]
+omit =
+    legifrance_mcp/cli.py

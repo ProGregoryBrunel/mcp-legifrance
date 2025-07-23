@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "legifrance-mcp"
+dynamic = ["version"]
+description = "Serveur MCP pour l'API Légifrance"
+authors = [{name="MCP", email="contact@example.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "httpx",
+  "pydantic-settings",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff",
+  "black",
+  "mypy",
+  "bandit",
+  "detect-secrets",
+  "codespell",
+  "pytest",
+  "pytest-cov",
+  "mkdocs",
+  "mkdocs-material",
+]
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+[tool.hatch.version]
+path = "legifrance_mcp/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = ["legifrance_mcp", "scripts", "examples", "README.md"]
+
