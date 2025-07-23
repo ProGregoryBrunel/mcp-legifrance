@@ -1,0 +1,8 @@
+{
+  "name": "legifrance-mcp",
+  "dockerFile": "Dockerfile.dev",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "postCreateCommand": "pip install -e .[dev]"
+}

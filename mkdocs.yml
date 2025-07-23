@@ -1,0 +1,4 @@
+site_name: MCP Légifrance
+docs_dir: docs
+nav:
+  - Accueil: index.md

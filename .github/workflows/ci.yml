@@ -1,0 +1,17 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install hatch
+      - run: hatch run lint
+      - run: hatch run test
+      - run: hatch run bandit -r legifrance_mcp
+      - run: hatch run detect-secrets scan
+      - run: hatch run mkdocs build --strict
